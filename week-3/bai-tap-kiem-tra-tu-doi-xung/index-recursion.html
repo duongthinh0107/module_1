@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+</body>
+<script>
+    // const wordToArr = word.split("");
+    function isPanlidrome(word) {
+        word += ""; // chuyển về chuỗi để check được cả số
+        let i = 0;
+        if (word.length <= 1) {
+            return true
+        } else {
+            if (word[i] === word[word.length - 1 - i]) {
+                return isPanlidrome(word.slice(1, word.length - 1));
+            } else {
+                return false
+            }
+        }
+    }
+
+    console.log(isPanlidrome("rotor"));
+    console.log(isPanlidrome("redder"));
+    console.log(isPanlidrome("motor"));
+    console.log(isPanlidrome(55355));
+    console.log(isPanlidrome(55654));
+
+</script>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+</body>
+<script>
+
+let a = [50,60,60,45,70];
+
+function solution(arr) {
+    // let outputArray = [];
+    let sum1 = 0;
+    let sum2 = 0;
+    for (let i = 0; i < arr.length ; i++) {
+        if (i % 2 === 0) {
+            sum1 += arr[i];
+        } else {
+            sum2 += arr[i];
+        }
+    }
+    return [sum1,sum2];
+}
+
+console.log(solution(a));
+</script>
+</html>

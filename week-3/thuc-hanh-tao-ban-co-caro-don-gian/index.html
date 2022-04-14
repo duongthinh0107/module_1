@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<p id="display"></p>
+<button type="submit" id="changeValue" onclick="changeValue()">Change Value</button>
+
+</body>
+<script>
+    let row = 10;
+    let col = 10;
+    let space = "&nbsp;&nbsp;&nbsp;"
+    let result = "";
+    let display = document.getElementById("display")
+    let arr = new Array(row); // tạo mảng có row phần tử
+    for (let i = 0; i < row; i++) {
+        arr[i] = new Array(col); // mỗi phần tử là 1 mảng, mảng con có col phần tử
+        for (let j = 0; j < col; j++) {
+            arr[i][j] = 0; // thêm giá trị 0 cho mỗi phần tử con
+        }
+        result += `${arr[i].join(space)}  <br>`
+    }
+    display.innerHTML = result;
+
+    function changeValue() {
+        let r = +prompt(`Nhập vào vị trí hàng cần thay đổi (1 - ${row}): `);
+        let c = +prompt(`Nhập vào vị trí cột cần thay đổi (1 - ${col}): `);
+        arr[r - 1][c - 1] = "x";
+        displayResult()
+    }
+
+    function displayResult() {
+        display.innerHTML = "";
+        for (let i = 0; i < row; i++) {
+            for (let j = 0; j < col; j++) {
+                display.innerHTML += arr[i][j] + space;
+            }
+            display.innerHTML += "<br>"
+        }
+    }
+</script>
+</html>

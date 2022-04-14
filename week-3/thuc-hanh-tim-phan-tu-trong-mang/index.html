@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+</body>
+<script>
+    let arr = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+    let num = +prompt("Enter a number: ", 0);
+    let length = arr.length;
+    let count = false;
+    for (let i = 0; i < length; i++) {
+        if (num === arr[i]) {
+            count = true;
+            alert(`Number ${num} has index ${i} in array`);
+            break;
+        }
+    }
+    console.log(count);
+    if (!count) {
+        alert(`Number ${num} has no in array`);
+    }
+</script>
+</html>

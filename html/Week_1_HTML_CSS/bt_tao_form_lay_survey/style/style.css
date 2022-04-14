@@ -1,0 +1,42 @@
+* {
+    /*font-size: 100%;*/
+    font-family: "Lucida Grande","Lucida Sans Unicode", Tahoma, sans-serif;
+}
+
+.survey {
+    width: 1000px;
+}
+
+.survey textarea {
+    width: 100%;
+}
+
+.survey table {
+    width: 100%;
+}
+
+
+table.agreementLevel {
+
+    border: 1px solid rgba(128, 128, 128, 0.26);
+    border-collapse: collapse;
+}
+
+table.agreementLevel tr td, th {
+    width: calc(100 / 7 * 1%);
+    text-align: center;
+    border: 1px solid rgba(128, 128, 128, 0.26);
+}
+
+table.agreementLevel tr td:first-child {
+    width: calc(100 / 7 * 3%);
+    text-align: left;
+}
+
+table.agreementLevel tr:first-child {
+    background-color: RGB(230, 230, 230);
+}
+
+table.agreementLevel tr:nth-child(3) {
+    background-color: RGB(245, 245, 245);
+}

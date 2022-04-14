@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài tập tạo form đơn giản</title>
+    <link rel="stylesheet" href="style/style.css">
+
+</head>
+<body>
+<form>
+    <table class="table">
+        <!--    Heading    -->
+        <tr>
+            <td colspan="4"><h3 id="heading">SỞ THÍCH CỦA BẠN</h3></td>
+        </tr>
+        <!--  Body       -->
+        <tr >
+            <td class="label">
+                <label for=yourname">Họ và tên</label>
+            </td>
+            <td colspan="3">
+                <input type="text" name="yourname" id=yourname" size="25">
+            </td>
+        </tr>
+        <tr>
+            <td class="label">
+                <label for=email">Email</label>
+            </td>
+            <td colspan="3">
+                <input type="text" name="email" id=email">
+            </td>
+        </tr>
+        <tr>
+            <td class="label"><p>Sở thích</p></td>
+            <td>
+                <input type="checkbox" name="sport" id="sport">
+                <label class="hobby_label" for="sport">Thể thao</label>
+            </td>
+            <td>
+                <input type="checkbox" name="music" id="music">
+                <label class="hobby_label" for="music">Âm nhạc</label>
+            </td>
+            <td>
+                <input type="checkbox" name="reading" id="reading">
+                <label class="hobby_label" for="reading">Đọc sách</label>
+            </td>
+        </tr>
+        <tr>
+            <td></td>
+            <td>
+                <label class="hobby_label">
+                    <input type="checkbox" name="web" id="web"> Lướt web
+                </label>
+            </td>
+            <td>
+                <label class="hobby_label">
+                    <input type="checkbox" name="game" id="game"> Chơi game
+                </label>
+            </td>
+            <td>
+                <label class="hobby_label">
+                    <input type="checkbox" name="movies" id="movies"> Điện ảnh
+                </label>
+            </td>
+        </tr>
+        <tr>
+            <td></td>
+            <td>
+                <label class="hobby_label">
+                    <input type="checkbox" name="travel" id="travel"> Du lịch
+                </label>
+            </td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td>
+                <button type="submit">Gửi thông tin</button>
+            </td>
+            <td>
+                <button type="reset">Nhập lại</button>
+            </td>
+            <td></td>
+        </tr>
+    </table>
+</form>
+</body>
+</html>

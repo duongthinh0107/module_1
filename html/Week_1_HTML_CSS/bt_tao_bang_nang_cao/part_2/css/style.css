@@ -1,0 +1,75 @@
+* {
+    margin: auto;
+}
+
+table {
+    width: 600px;
+    text-align: center;
+    border-collapse: collapse;
+    margin: 0 20px
+}
+
+td, th {
+    width: calc(100 / 7 * 1%);
+}
+
+h2 {
+    color: blue;
+}
+
+tr:first-child {
+    height: 50px;
+}
+
+tr:nth-child(2) {
+    color: white;
+    height: 30px;
+}
+tr:nth-child(3) {
+    height: 30px;
+}
+
+tr:nth-child(2) th {
+    background-color: orange;
+}
+
+tr:nth-child(2) th:first-child {
+    background-color: orangered;
+}
+
+tr:nth-child(2) th:last-child {
+    background-color: blue;
+}
+
+tr:nth-child(3) td:first-child {
+    color: orangered;
+}
+
+tr:nth-child(3) td:last-child {
+    color: blue;
+}
+
+tr:nth-child(n+4) {
+    height: 45px;
+}
+
+tr:nth-child(n+4) td:not(tr:nth-child(n+4) td sub) {
+    border: 1px solid grey;
+    font-weight: 700;
+}
+
+tr:nth-child(n+4) td sub {
+    font-weight: 400;
+}
+
+tr:nth-child(n+4) td:last-child {
+    color: blue;
+}
+
+tr:nth-child(n+4) td:last-child sub {
+    color: black;
+}
+
+sub {
+    font-size: 10px;
+}

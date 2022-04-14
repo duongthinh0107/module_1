@@ -1,0 +1,29 @@
+* {
+    font-size: 100%;
+    margin: auto;
+}
+body {
+    background-color: aqua;
+}
+.table {
+    width: 500px;
+    /*border-collapse: collapse;*/
+    background-color: white;
+
+}
+.table td {
+    /*border: 1px solid;*/
+    width: 25%;
+}
+.table #heading {
+    text-align: center;
+    color: white;
+    background-color: darkorange;
+}
+.table .label {
+    text-align: right;
+    color: darkblue;
+}
+.table .hobby_label {
+    color: orange;
+}

@@ -1,0 +1,21 @@
+* {
+    font-size: 100%;
+    margin: auto;
+}
+table {
+    width: 500px;
+    background-color: beige;
+}
+table th, td {
+    /*border: 1px solid;*/
+    /*border-collapse: collapse;*/
+    width: 25%;
+}
+.signUp .tittle {
+    text-align: left;
+    color: darkblue;
+    background-color: aqua;
+}
+.signUp .text {
+    color: blue;
+}

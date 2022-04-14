@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #allProduct td:first-child {
+            width: 200px;
+        }
+
+        #allProduct td:last-child {
+            text-align: center;
+        }
+
+        #allProduct tr:nth-child(even) {
+            background-color: #f0f0f1;
+        }
+
+        #allProduct th:first-child {
+            width: 200px;
+            text-align: left;
+        }
+
+        #allProduct th:last-child {
+            color: red;
+            text-align: right;
+        }
+
+    </style>
+</head>
+<body>
+<div class="addNewProduct">
+    <div>
+        <label for="addNewProduct"><h3>Add New Product</h3></label>
+        <input type="text" name="addNewProduct" id="addNewProduct" placeholder="New Product">
+        <button type="submit" class="" id="addButton" onclick="addNewProduct()">Add</button>
+        <button type="submit" class="" id="editButton" style="visibility:hidden">Update</button>
+
+    </div>
+    <div class="displayAllProduct">
+        <h3>Display All Product</h3>
+        <table class="allProduct" id="allProduct">
+
+        </table>
+
+    </div>
+
+</div>
+</body>
+<script>
+    const allProduct = ["Nokia", "Iphone"];
+    let newProduct = document.getElementById("addNewProduct");
+
+    displayAllProduct();
+
+    // Hàm hiển thị sản phẩm
+    function displayAllProduct() {
+        let result = "";
+        result += `<tr>
+                   <th>Product name</th>
+                   <th></th>
+                   <th>${allProduct.length} products</th>
+                   </tr>`
+        // let length = allProduct.length;
+        let table = document.getElementById("allProduct");
+        for (let i = allProduct.length - 1; i >= 0; i--) {
+            result += `<tr>
+                    <td>${allProduct[i]}</td>
+                    <td><button type="submit" onclick="editProduct(${i})">Edit</button></td>
+                    <td><button type="submit" onclick="deleteProduct(${i})">Delete</button></td>
+                    </tr>`
+        }
+        table.innerHTML = result;
+
+    }
+
+    // Hàm thêm sản phẩm
+    function addNewProduct() {
+        let newProductValue = newProduct.value;
+        if (newProductValue) {
+            console.log(newProductValue);
+            allProduct.push(newProductValue);
+            console.log(allProduct);
+            newProduct.value = "";
+            displayAllProduct();
+        }
+    }
+
+    // Hàm xóa sản phẩm
+    function deleteProduct(index) {
+        let confirmDelete = confirm("Bạn có chắc muốn xóa " + allProduct[index] + " ?");
+        if (confirmDelete) {
+            allProduct.splice(index, 1);
+            console.log(allProduct);
+            displayAllProduct();
+        }
+    }
+
+    // Hàm sửa sản phẩm
+    function editProduct(index) {
+        // let editedProduct = prompt("Nhập lại sản phẩm: ", allProduct[index]);
+        // if (editedProduct) {
+        //     allProduct[index] = editedProduct;
+        // }
+
+        newProduct.value = allProduct[index];
+        document.getElementById("addButton").style.display = "none";
+        document.getElementById("editButton").style.visibility = "visible";
+        document.getElementById("editButton").onclick = function () {
+            let editedProduct = newProduct.value;
+            if (editedProduct) {
+                allProduct[index] = editedProduct;
+                displayAllProduct();
+                newProduct.value = "";
+                document.getElementById("addButton").style.display = "initial";
+                document.getElementById("editButton").style.visibility = "hidden";
+            }
+        }
+        console.log(allProduct);
+        displayAllProduct();
+    }
+</script>
+</html>

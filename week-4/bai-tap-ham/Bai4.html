@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+</body>
+<script>
+    function findLuckyTicket(ticketNumber) {
+        ticketNumber += "";
+        let length = ticketNumber.length;
+        let sum1 = 0;
+        let sum2 = 0;
+        if (length % 2 !== 0) {
+            return false;
+        } else {
+            for (let i = 0; i < length / 2; i++) {
+                sum1 += +ticketNumber[i];
+                sum2 += +ticketNumber[length - 1 - i];
+            }
+        }
+        if (sum1 === sum2) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+    console.log(findLuckyTicket(1230));
+    console.log(findLuckyTicket(239017));
+    console.log(findLuckyTicket(13579));
+    console.log(findLuckyTicket(12345320));
+
+</script>
+</html>

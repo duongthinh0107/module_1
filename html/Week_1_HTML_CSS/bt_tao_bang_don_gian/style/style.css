@@ -1,0 +1,30 @@
+body {
+    width: 600px;
+}
+h2 {
+    text-align: center;
+    color: darkblue;
+}
+#info {
+    color: blue;
+}
+#info td:last-child {
+    text-align: right;
+}
+table {
+    width: 100%;
+}
+#timeTable tr:first-child th:not(#timeTable tr:first-child th:first-child) {
+    background-color: yellow;
+}
+#timeTable tr:nth-child(2) {
+    background-color: orange;
+}
+table#timeTable {
+    border: 1px solid;
+    border-collapse: collapse;
+}
+table#timeTable td, th {
+    border: 1px solid;
+}
+

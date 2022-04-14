@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+</body>
+<script>
+    // Đề bài: Cho 1 chuỗi vd: s1 = "abcdcabac"
+    // Tìm số lần các ký tự trong chuỗi lặp lại
+    // VD: a lặp lại 3 lần, b 2 lần, c 3 lần, d 1 lần
+    let s1 = "abcdcabac";
+
+    function countDuplicate(str) {
+        let strToArr = str.split("");
+        let outputArr = [];
+        console.log(strToArr);
+        /* Chuyển string thành mảng các ký tự
+        * Lặp các phần tử của mảng đó qua string ban đầu, nếu trùng thì tăng biến count lên 1 đơn vị
+        * (Mỗi ký tự ít nhất sẽ trùng một lần)
+        * Nếu trùng hơn 1 ký tự thì sẽ chuyển các ký tự trùng đấy thành ""
+        * Vòng lặp sẽ bỏ qua nếu gặp phần từ "" trong mảng (tức phần tử đấy đã trùng rồi)
+        * Add ký tự đó và số lượng trùng của nó (biến count) vào một mảng
+        * */
+        for (let i = 0; i < strToArr.length; i++) {
+            let count = 0;
+            if (strToArr[i] === "") {
+                continue;
+            }
+            for (let j = 0; j < str.length; j++) {
+                if (strToArr[i] === str[j]) {
+                    count++;
+                    if (j !== i) {
+                        strToArr[j] = "";
+                    }
+                }
+            }
+            outputArr.push([strToArr[i], count]);
+        }
+        console.log(strToArr);
+        return outputArr;
+    }
+
+    console.log(countDuplicate(s1));
+</script>
+</html>
